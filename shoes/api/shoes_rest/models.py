@@ -3,7 +3,7 @@ from django.db import models
 
 class Shoe(models.Model):
     manufacturer = models.CharField(max_length=100)
-    model_name = models.CharField(max_length=100)
+    brand_name = models.CharField(max_length=100)
     color = models.CharField(max_length=100)
     pic_url = models.CharField(max_length=100)
     bin= models.ForeignKey('BinVO', related_name="shoes", on_delete=models.CASCADE)
