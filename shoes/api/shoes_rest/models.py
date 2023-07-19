@@ -9,7 +9,12 @@ class Shoe(models.Model):
     bin= models.ForeignKey('BinVO', related_name="shoes", on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.model_name
+        return self.brand_name
+
+    class Meta:
+        ordering = ['bin', 'brand_name']
+        verbose_name = 'Shoe'
+        verbose_name_plural = 'Shoes'
 
 class BinVO(models.Model):
     closet_name = models.CharField(max_length=100)
@@ -19,3 +24,8 @@ class BinVO(models.Model):
 
     def __str__(self):
         return self.closet_name
+
+    class Meta:
+        ordering = ['closet_name', 'bin_number']
+        verbose_name = 'Bin'
+        verbose_name_plural = 'Bins'

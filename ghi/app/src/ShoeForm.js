@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 export default function ShoeForm() {
-  const [brandName, setBrandName] = useState("");
+  const [model, setmodel] = useState("");
   const [manufacturer, setManufacturer] = useState("");
   const [color, setColor] = useState("");
   const [pic_url, setPicUrl] = useState("");
   const [bins, setBins] = useState("");
 
-  const handleBrandNameChange = (event) => {
-    setBrandName(event.target.value);
+  const handlemodelChange = (event) => {
+    setmodel(event.target.value);
   };
 
   const handleManufacturerChange = (event) => {
@@ -31,7 +31,7 @@ export default function ShoeForm() {
     event.preventDefault();
 
     const shoe = {};
-    shoe.name = brandName;
+    shoe.model = model;
     shoe.manufacturer = manufacturer;
     shoe.color = color;
     shoe.pic_url = pic_url;
@@ -52,7 +52,7 @@ export default function ShoeForm() {
       const newBin = await response.json();
       console.log(newBin);
 
-      setBrandName("");
+      setmodel("");
       setManufacturer("");
       setColor("");
       setPicUrl("");
@@ -82,14 +82,14 @@ export default function ShoeForm() {
             <form onSubmit={handleSubmit} id="create-shoe-form">
               <div className="form-floating mb-3">
                 <input
-                  onChange={handleBrandNameChange}
+                  onChange={handlemodelChange}
                   placeholder=" Brand Name"
                   required
                   type="text"
                   name="name"
                   id="name"
                   className="form-control"
-                  value={brandName}
+                  value={model}
                 />
                 <label htmlFor="name">Brand Name</label>
               </div>
