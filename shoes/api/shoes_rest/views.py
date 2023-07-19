@@ -18,9 +18,9 @@ class ShoeListEncoder(ModelEncoder):
     properties = [
         "id",
         "manufacturer",
-        "name",
+        "brand_name",
         "color",
-        "picture_url",
+        "pic_url",
         "bin",
     ]
     encoders = {

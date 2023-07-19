@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import BinVO, Shoe
+
+admin.site.register(BinVO)
+admin.site.register(Shoe)
