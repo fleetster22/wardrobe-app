@@ -2,8 +2,8 @@
 
 Team:
 
-* Person 1 - Which microservice?
-* Person 2 - Which microservice?
+- Person 1 - Chris O'Rourke - hats
+- Person 2 - Anaka Norfleet - shoes
 
 ## Design
 
