@@ -1,0 +1,48 @@
+#fallingHat {
+    position: absolute;
+    width: auto;
+    max-width: 2000px;
+    top: -180px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fallAndSlide 4.5s forwards;
+    z-index: 1000;
+}
+
+@keyframes fallAndSlide {
+    40% {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 1;
+    }
+    60% {
+        top: 0;
+        left: 0;
+        transform: none;
+        opacity: 1;
+    }
+    80% {
+        top: 0;
+        left: 0;
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+    90% {
+        top: 0;
+        left: 50%;
+        transform: rotate(360deg) translateX(50%);
+        opacity: 0.5;
+    }
+    100% {
+        top: 0;
+        left: 100%;
+        transform: rotate(360deg) translateX(100%);
+        opacity: 0;
+    }
+}
+
+#headline {
+    padding-top: 180px;
+    text-align: center;
+}

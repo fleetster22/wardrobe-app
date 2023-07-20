@@ -24,7 +24,6 @@ class CreateHat extends React.Component {
     }
   }
 
-
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value
@@ -59,12 +58,13 @@ class CreateHat extends React.Component {
       this.setState(cleared)
     }
   }
+
   render() {
     return (
-      <div className="row">
+      <div className="row justify-content-center">
         <div className="offset-3 col-6">
           <div className="shadow p-4 mt-4">
-            <h1>Create a new hat</h1>
+            <h1 className="text-center">Create a new hat</h1>
             <form onSubmit={this.handleSubmit}>
               <div className="form-floating mb-3">
                 <input type="text" className="form-control" id="style_name" name="style_name" value={this.state.style_name} placeholder="Style Name" onChange={this.handleChange} />
@@ -90,12 +90,13 @@ class CreateHat extends React.Component {
                   })}
                 </select>
               </div>
-              <button type="submit" className="btn btn-primary">Submit</button>
+              <div className="text-center">
+                <button type="submit" className="btn btn-primary">Submit</button>
+              </div>
             </form>
           </div>
         </div>
       </div>
-
     )
   }
 }

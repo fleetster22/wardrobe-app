@@ -14,5 +14,4 @@ microservice, here.
 
 ## Hats microservice
 
-Setup admin pathing /admin/, Created Hat model and LocationVO model & set attributes based on the reference in the Wardrobe application.
-Set the Poller to grab information from API and send back to hats_api. React uses API calls to get data to create hats and list hats.
+Setup admin pathing /admin/, Created Hat model and LocationVO model & set attributes based on the reference in the Wardrobe application. Set the Poller to grab information from API and send back to hats_api. React uses API calls to get data to create hats and list hats.
