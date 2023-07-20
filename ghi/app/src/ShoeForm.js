@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 export default function ShoeForm() {
-  const [model, setmodel] = useState("");
+  const [model, setModel] = useState("");
   const [manufacturer, setManufacturer] = useState("");
   const [color, setColor] = useState("");
   const [pic_url, setPicUrl] = useState("");
   const [bins, setBins] = useState("");
 
-  const handlemodelChange = (event) => {
-    setmodel(event.target.value);
+  const handleModelChange = (event) => {
+    setModel(event.target.value);
   };
 
   const handleManufacturerChange = (event) => {
@@ -52,7 +52,7 @@ export default function ShoeForm() {
       const newBin = await response.json();
       console.log(newBin);
 
-      setmodel("");
+      setModel("");
       setManufacturer("");
       setColor("");
       setPicUrl("");
@@ -82,16 +82,16 @@ export default function ShoeForm() {
             <form onSubmit={handleSubmit} id="create-shoe-form">
               <div className="form-floating mb-3">
                 <input
-                  onChange={handlemodelChange}
-                  placeholder=" Brand Name"
+                  onChange={handleModelChange}
+                  placeholder="Model"
                   required
                   type="text"
-                  name="name"
-                  id="name"
+                  name="model"
+                  id="model"
                   className="form-control"
                   value={model}
                 />
-                <label htmlFor="name">Brand Name</label>
+                <label htmlFor="name">Model</label>
               </div>
               <div className="form-floating mb-3">
                 <input
@@ -150,7 +150,7 @@ export default function ShoeForm() {
                   ))}
                 </select>
               </div>
-              <button className="btn btn-info">Submit</button>
+              <button className="btn btn-info">Add Shoe</button>
             </form>
           </div>
         </div>
