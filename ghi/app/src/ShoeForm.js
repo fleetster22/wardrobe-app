@@ -32,9 +32,11 @@ export default function ShoeForm() {
     data.manufacturer = manufacturer;
     data.color = color;
     data.pic_url = pic_url;
-    data.bins = selectedBin;
+    data.bin = selectedBin;
 
     const url = "http://localhost:8080/api/shoes/";
+
+    console.log("sending data", data);
 
     const fetchConfig = {
       method: "post",
@@ -45,9 +47,10 @@ export default function ShoeForm() {
     };
 
     const response = await fetch(url, fetchConfig);
+    console.log("Received response:", response);
     if (response.ok) {
-      const newBin = await response.json();
-      console.log(newBin);
+      const newShoe = await response.json();
+      console.log("Response data:", newShoe);
 
       setModel("");
       setManufacturer("");
@@ -61,6 +64,7 @@ export default function ShoeForm() {
   const fetchData = async () => {
     const url = "http://localhost:8080/api/bins/";
     const response = await fetch(url);
+    console.log("Received response:", response);
     if (response.ok) {
       const data = await response.json();
       setBins(data.bins);
@@ -142,7 +146,7 @@ export default function ShoeForm() {
                 >
                   <option value="">Choose a bin</option>
                   {bins.map((bin) => (
-                    <option key={bin.bin_number} value={bin.bin_number}>
+                    <option key={bin.id} value={bin.id}>
                       {bin.closet_name}
                     </option>
                   ))}

@@ -7,10 +7,9 @@ Team:
 
 ## Design
 
-## Shoes microservice
+## Shoes microservic
 
-Explain your models and integration with the wardrobe
-microservice, here.
+My partner and I used Domain Driven Design using ubiquitous language to build our project. I created a shoe entity usimg Django models and views and then connected it to the Bins via a Bin Value Object creating an aggregate. My aggregates together with my partners' make up the Wardrobe bounded context. We use Docker for our microservices so that we can scale in the future.
 
 ## Hats microservice
 

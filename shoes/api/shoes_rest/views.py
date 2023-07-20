@@ -18,7 +18,7 @@ class ShoeListEncoder(ModelEncoder):
     properties = [
         "id",
         "manufacturer",
-        "brand_name",
+        "model",
         "color",
         "pic_url",
         "bin",
@@ -49,12 +49,6 @@ def list_shoes(request):
     else:
         content = json.loads(request.body)
 
-        if "bin" not in content:
-            return JsonResponse(
-                {"message": "No bin provided in the request body"},
-                status=400,
-            )
-
         try:
             bin = BinVO.objects.get(id=content["bin"])
             content["bin"] = bin
@@ -63,10 +57,14 @@ def list_shoes(request):
                 {"message": "Invalid bin"},
                 status=400,
             )
-        else:
-            bin_number = content["bin"]["bin_number"]
-            bin = BinVO.objects.get(bin_number=bin_number)
-            content["bin"] = bin
+
+        shoe = Shoe.objects.create(**content)
+        return JsonResponse(
+            shoe,
+            encoder=ShoeListEncoder,
+            safe=False,
+        )
+
 
 
 @require_http_methods(["GET", "DELETE"])

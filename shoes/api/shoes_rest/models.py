@@ -3,7 +3,7 @@ from django.db import models
 
 class Shoe(models.Model):
     manufacturer = models.CharField(max_length=100)
-    brand_name = models.CharField(max_length=100)
+    model = models.CharField(max_length=100)
     color = models.CharField(max_length=100)
     pic_url = models.CharField(max_length=100)
     bin= models.ForeignKey('BinVO', related_name="shoes", on_delete=models.CASCADE)
@@ -12,7 +12,7 @@ class Shoe(models.Model):
         return self.brand_name
 
     class Meta:
-        ordering = ['bin', 'brand_name']
+        ordering = ['bin', 'model']
         verbose_name = 'Shoe'
         verbose_name_plural = 'Shoes'
 
