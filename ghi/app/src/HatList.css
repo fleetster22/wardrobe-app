@@ -2,32 +2,53 @@
     position: relative;
     width: fit-content;
     margin: auto;
-  }
+}
 
-  #fallingHat {
+#fallingHat {
     position: absolute;
-    width: 150px; /* Enlarged by 300% from the original 50px */
-    top: -180px; /* Adjusted start position due to larger hat size */
-    left: 50%; /* Center the hat above the text */
+    width: auto;
+    max-width: 2000px;
+    top: -180px;
+    left: 50%;
     transform: translateX(-50%);
-    animation: fallAndSlide 2.5s forwards; /* Animation to make the hat fall and then slide */
-    z-index: 1000; /* Make it the front-most facing object */
-  }
+    animation: fallAndSlide 4.5s forwards;
+    z-index: 1000;
+}
 
-  @keyframes fallAndSlide {
+@keyframes fallAndSlide {
+    40% {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 1;
+    }
+    60% {
+        top: 0;
+        left: 0;
+        transform: none;
+        opacity: 1;
+    }
     80% {
-      top: 0; /* End position for falling (hat will fall onto the top edge of the text) */
-      left: 50%;
-      transform: translateX(-50%);
+        top: 0;
+        left: 0;
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+    90% {
+        top: 0;
+        left: 50%;
+        transform: rotate(360deg) translateX(50%);
+        opacity: 0.5;
     }
     100% {
-      top: 0;
-      left: 0; /* Slide to absolute left alignment */
-      transform: none;
+        top: 0;
+        left: 100%;
+        transform: rotate(360deg) translateX(100%);
+        opacity: 0;
     }
-  }
+}
 
-  #headline {
-    padding-top: 180px; /* Provide space for the enlarged hat above the text */
+#headline {
+    padding-top: 180px;
     text-align: center;
-  }
+}
