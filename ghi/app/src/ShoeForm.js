@@ -24,10 +24,6 @@ export default function ShoeForm() {
     setPicUrl(event.target.value);
   };
 
-  const handleBinChange = (event) => {
-    setSelectedBin(event.target.value);
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -63,7 +59,7 @@ export default function ShoeForm() {
   };
 
   const fetchData = async () => {
-    const url = "http://localhost:8100/api/bins/";
+    const url = "http://localhost:8080/api/bins/";
     const response = await fetch(url);
     if (response.ok) {
       const data = await response.json();
@@ -146,14 +142,15 @@ export default function ShoeForm() {
                 >
                   <option value="">Choose a bin</option>
                   {bins.map((bin) => (
-                    <option key={bin.id} value={bin.id}>
-                      {bin.name}
+                    <option key={bin.bin_number} value={bin.bin_number}>
+                      {bin.closet_name}
                     </option>
                   ))}
                 </select>
               </div>
-              <button className="btn btn-info">Add Shoe</button>
-              <button className="btn btn-danger ms-3">Delete Shoe</button>
+              <button type="submit" className="btn btn-info">
+                Add Shoe
+              </button>
             </form>
           </div>
         </div>
