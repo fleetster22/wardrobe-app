@@ -29,10 +29,6 @@ def list_location_vos(request):
 
 @require_http_methods(["GET", "POST"])
 def list_hats(request):
-    """
-    Collection RESTful API handler for Hat objects in
-    the wardrobe.
-    """
     if request.method == "GET":
         hats = Hat.objects.all()
         return JsonResponse (
