@@ -11,7 +11,6 @@ function App(props) {
   if (props.shoes === undefined) {
     return null;
   }
-
   return (
     <BrowserRouter>
       <Nav />

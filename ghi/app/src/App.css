@@ -1,17 +1,14 @@
-td.shoe_detail {
-    vertical-align: middle;
-    font-size: 1.2rem;
-}
+
 
 .navbar {
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
-    position: sticky;
-  }
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+  position: sticky;
+}
 
-  tr {
-    text-align: center;
-  }
+tr {
+  text-align: center;
+}
 
-   img {
-    height: 200px;
-  }
+img {
+  height: 200px;
+}
