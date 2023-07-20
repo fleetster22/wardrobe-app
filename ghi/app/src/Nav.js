@@ -32,7 +32,7 @@ function Nav() {
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/shoes/new">
-                Add New Shoe
+                Add Shoe
               </NavLink>
             </li>
             <li className="nav-item">
@@ -42,7 +42,7 @@ function Nav() {
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/hats/new">
-              Add Hat
+                Add Hat
               </NavLink>
             </li>
           </ul>

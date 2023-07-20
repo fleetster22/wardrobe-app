@@ -12,10 +12,10 @@ root.render(
 async function loadShoes() {
   const response = await fetch("http://localhost:8080/api/shoes/");
   if (response.ok) {
-    const data = await response.json();
+    const shoeData = await response.json();
     root.render(
       <React.StrictMode>
-        <App shoes={data.shoes} />
+        <App shoes={shoeData.shoes} />
       </React.StrictMode>
     );
   } else {

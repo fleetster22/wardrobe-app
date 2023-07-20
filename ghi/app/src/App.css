@@ -11,3 +11,7 @@ td.shoe_detail {
   tr {
     text-align: center;
   }
+
+   img {
+    height: 200px;
+  }
