@@ -66,8 +66,21 @@ def list_shoes(request):
         )
 
 
-@require_http_methods(["DELETE"])
-def delete_shoe(request, id):
+@require_http_methods(["GET", "DELETE"])
+def show_shoe(request, id):
     if request.method == "DELETE":
         count, _ = Shoe.objects.filter(id=id).delete()
         return JsonResponse({"deleted": count > 0})
+    else:
+        try:
+            shoe = Shoe.objects.get(id=id)
+            return JsonResponse(
+                shoe,
+                encoder=ShoeListEncoder,
+                safe=False,
+            )
+        except Shoe.DoesNotExist:
+            return JsonResponse(
+                {"message": "Shoe not found"},
+                status=400,
+            )

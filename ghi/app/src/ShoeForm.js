@@ -5,7 +5,8 @@ export default function ShoeForm() {
   const [manufacturer, setManufacturer] = useState("");
   const [color, setColor] = useState("");
   const [pic_url, setPicUrl] = useState("");
-  const [bins, setBins] = useState("");
+  const [bins, setBins] = useState([]);
+  const [selectedBin, setSelectedBin] = useState("");
 
   const handleModelChange = (event) => {
     setModel(event.target.value);
@@ -24,24 +25,24 @@ export default function ShoeForm() {
   };
 
   const handleBinChange = (event) => {
-    setBins(event.target.value);
+    setSelectedBin(event.target.value);
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const shoe = {};
-    shoe.model = model;
-    shoe.manufacturer = manufacturer;
-    shoe.color = color;
-    shoe.pic_url = pic_url;
-    shoe.bins = bins;
+    const data = {};
+    data.model = model;
+    data.manufacturer = manufacturer;
+    data.color = color;
+    data.pic_url = pic_url;
+    data.bins = selectedBin;
 
     const url = "http://localhost:8080/api/shoes/";
 
     const fetchConfig = {
       method: "post",
-      body: JSON.stringify(shoe),
+      body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json",
       },
@@ -140,7 +141,7 @@ export default function ShoeForm() {
                   id="bins"
                   name="bins"
                   className="form-select"
-                  value={bins}
+                  value={selectedBin}
                 >
                   <option value="">Choose a bin</option>
                   {bins.map((bin) => (
@@ -151,6 +152,7 @@ export default function ShoeForm() {
                 </select>
               </div>
               <button className="btn btn-info">Add Shoe</button>
+              <button className="btn btn-danger ms-3">Delete Shoe</button>
             </form>
           </div>
         </div>
