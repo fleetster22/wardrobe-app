@@ -57,7 +57,8 @@ export default function ShoeForm() {
       setManufacturer("");
       setColor("");
       setPicUrl("");
-      setBins("");
+      setSelectedBin("");
+      setBins([]);
     }
   };
 
@@ -83,19 +84,6 @@ export default function ShoeForm() {
             <form onSubmit={handleSubmit} id="create-shoe-form">
               <div className="form-floating mb-3">
                 <input
-                  onChange={handleModelChange}
-                  placeholder="Model"
-                  required
-                  type="text"
-                  name="model"
-                  id="model"
-                  className="form-control"
-                  value={model}
-                />
-                <label htmlFor="name">Model</label>
-              </div>
-              <div className="form-floating mb-3">
-                <input
                   onChange={handleManufacturerChange}
                   placeholder="Manufacturer"
                   required
@@ -106,6 +94,19 @@ export default function ShoeForm() {
                   value={manufacturer}
                 />
                 <label htmlFor="manufacturer">Manufacturer</label>
+              </div>
+              <div className="form-floating mb-3">
+                <input
+                  onChange={handleModelChange}
+                  placeholder="Model"
+                  required
+                  type="text"
+                  name="model"
+                  id="model"
+                  className="form-control"
+                  value={model}
+                />
+                <label htmlFor="name">Model</label>
               </div>
               <div className="form-floating mb-3">
                 <input
@@ -136,7 +137,7 @@ export default function ShoeForm() {
 
               <div className="mb-3">
                 <select
-                  onChange={handleBinChange}
+                  onChange={(e) => setSelectedBin(e.target.value)}
                   required
                   id="bins"
                   name="bins"
