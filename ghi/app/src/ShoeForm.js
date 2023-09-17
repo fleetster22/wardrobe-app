@@ -36,8 +36,6 @@ export default function ShoeForm() {
 
     const url = "http://localhost:8080/api/shoes/";
 
-    console.log("sending data", data);
-
     const fetchConfig = {
       method: "post",
       body: JSON.stringify(data),
@@ -47,11 +45,7 @@ export default function ShoeForm() {
     };
 
     const response = await fetch(url, fetchConfig);
-    console.log("Received response:", response);
     if (response.ok) {
-      const newShoe = await response.json();
-      console.log("Response data:", newShoe);
-
       setModel("");
       setManufacturer("");
       setColor("");
@@ -64,7 +58,6 @@ export default function ShoeForm() {
   const fetchData = async () => {
     const url = "http://localhost:8080/api/bins/";
     const response = await fetch(url);
-    console.log("Received response:", response);
     if (response.ok) {
       const data = await response.json();
       setBins(data.bins);
