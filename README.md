@@ -1,16 +1,48 @@
-# Wardrobify
+# Wardrobe App
+
+![Wardrobe App Screenshot](path_to_screenshot.png)
 
 Team:
 
-- Person 1 - Chris O'Rourke - hats
-- Person 2 - Anaka Norfleet - shoes
+- Co-Developer - Chris O'Rourke
+- Co-Developer - Anaka Norfleet
 
-## Design
+## Table of Contents
 
-## Shoes microservic
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [License](#license)
 
-My partner and I used Domain Driven Design using ubiquitous language to build our project. I created a shoe entity usimg Django models and views and then connected it to the Bins via a Bin Value Object creating an aggregate. My aggregates together with my partners' make up the Wardrobe bounded context. We use Docker for our microservices so that we can scale in the future.
+## Features
 
-## Hats microservice
+- **Django Backend**: Robust backend API using Django.
+- **React Frontend**: Responsive and intuitive frontend using React.
+- **Postgresql Database**: Reliable and efficient database management with Postgresql.
+- **Docker Integration**: Simplified development and production setups with Docker.
 
-Setup admin pathing /admin/, Created Hat model and LocationVO model & set attributes based on the reference in the Wardrobe application. Set the Poller to grab information from API and send back to hats_api. React uses API calls to get data to create hats and list hats.
+## Prerequisites
+
+- Docker
+- Docker Compose
+- Python 3
+- Django
+
+## Getting Started
+
+**Clone the Repository**
+git clone https://github.com/fleetster22/wardrobe-app.git
+
+cd wardrobe-app
+
+**Build and Run the Docker Containers**
+docker-compose up --build
+
+The application should now be running on http://localhost:8000/
+
+**Usage**
+A place to store items in your wardrobe to create fabulous outfits.
+
+**License**
+Distributed under the MIT License.
